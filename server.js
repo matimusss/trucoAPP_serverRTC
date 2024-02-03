@@ -37,6 +37,43 @@ socketServer.origins(function(origin, callback) {
 });
 */
 
+
+socketServer.origins(function(origin, callback) {
+    if (origin && ![
+      'http://trucoapp-client.onrender.com',
+'http://trucoapp-client.onrender.com:3000',
+'https://trucoapp-client.onrender.com',
+'https://trucoapp-client.onrender.com:3000',
+'3.134.238.10',
+'3.129.111.220',
+'52.15.118.168',
+'http://3.134.238.10',
+'http://3.129.111.220',
+'http://52.15.118.168',
+'https://3.134.238.10',
+'https://3.129.111.220',
+'https://52.15.118.168',
+'http://3.134.238.10:3000',
+'http://3.129.111.220:3000',
+'http://52.15.118.168:3000',
+'https://3.134.238.10:3000',
+'https://3.129.111.220:3000',
+'https://52.15.118.168:3000',
+'3.134.238.10:3000',
+'3.129.111.220:3000',
+'52.15.118.168:3000'
+    ].includes(origin)) {
+        return callback('origin not allowed', false);
+    }
+    callback(null, true);
+});
+
+
+
+
+
+
+
 easyrtc.setOption("logLevel", "debug");
 
 // Overriding the default easyrtcAuth listener, only so we can directly access its callback
