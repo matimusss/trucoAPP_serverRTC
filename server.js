@@ -40,6 +40,10 @@ socketServer.origins(function(origin, callback) {
 
 socketServer.origins(function(origin, callback) {
     if (origin && ![
+             'http://trucoapp-build.onrender.com',
+'http://trucoapp-build.onrender.com:3000',
+'https://trucoapp-build.onrender.com',
+'https://trucoapp-build.onrender.com:3000',
       'http://trucoapp-client.onrender.com',
 'http://trucoapp-client.onrender.com:3000',
 'https://trucoapp-client.onrender.com',
